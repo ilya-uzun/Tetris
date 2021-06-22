@@ -15,7 +15,23 @@
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="@dimen/layout_margin_top"
         android:layout_marginButton="@dimen/layout_margin_button"
-        android:orientation="vertical"
-        android:gravity="center_horizontal">
+        android:orientation="vertical">
     </LinearLayout>
+    
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TETRIS"
+        android:textSize="80sp"/>
+    <TextView
+        android:id="@+id/tv_high_score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="High score: 0"
+        android:textSize="20sp"
+        android:layout_marginTop="@+id/layout_margin_top"/>
+    <LinearLyaout
+        android:layout_width="mat_content"
+        android:layout_height="wrap_content"
+              
 </androidx.constraintlayout.widget.ConstraintLayout>
