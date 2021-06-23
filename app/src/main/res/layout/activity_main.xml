@@ -30,8 +30,26 @@
         android:text="High score: 0"
         android:textSize="20sp"
         android:layout_marginTop="@+id/layout_margin_top"/>
-    <LinearLyaout
-        android:layout_width="mat_content"
+<LinearLyaout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_widtht="1"
+        android:orientation="vertical">
+    <Button
+        android:id="@+id/btn_new_game"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="New game"/>
+    <Button
+        android:id="@+id/btn_reset_score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Reset score"/>
+    <Button
+        android:id="@+id/btn_exit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Exit"/>
+</LinearLyaout>
               
 </androidx.constraintlayout.widget.ConstraintLayout>
