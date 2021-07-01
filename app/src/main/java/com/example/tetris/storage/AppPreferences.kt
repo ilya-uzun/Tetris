@@ -14,7 +14,7 @@ class AppPreferences(ctx: Context) {
         return data.getInt("HIGH_SCORE", 0)
     }
     // сбрасывает значения наибольшее количество очко
-    fun clearHighScore(highScope: Int){
+    fun clearHighScore(){
         data.edit().putInt("HIGH_SCORE", 0).apply()
     }
 }

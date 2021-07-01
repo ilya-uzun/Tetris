@@ -9,6 +9,7 @@ import android.widget.Button
 import android.widget.TextView
 //import android.support.v7.app.AppCompatActivity
 import androidx.appcompat.app.ActionBar
+import com.example.tetris.storage.AppPreferences
 
 class MainActivity : AppCompatActivity() {
 
@@ -34,7 +35,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun onBtnResetScoreClick(view: View) {
-
+        val preferences = AppPreferences(this)
+        preferences.clearHighScore()
     }
 
     private fun onBtnExitClick(view: View) {
