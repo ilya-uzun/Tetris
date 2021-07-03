@@ -10,6 +10,7 @@ import android.widget.TextView
 //import android.support.v7.app.AppCompatActivity
 import androidx.appcompat.app.ActionBar
 import com.example.tetris.storage.AppPreferences
+import com.google.android.material.snackbar.Snackbar
 
 class MainActivity : AppCompatActivity() {
 
@@ -37,6 +38,7 @@ class MainActivity : AppCompatActivity() {
     private fun onBtnResetScoreClick(view: View) {
         val preferences = AppPreferences(this)
         preferences.clearHighScore()
+        Snackbar.make(view, "Score successfully reset",Snackbar.LENGTH_SHORT).show() // Snackbar Класс для дезайна
     }
 
     private fun onBtnExitClick(view: View) {
