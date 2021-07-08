@@ -16,7 +16,7 @@ public class Block {
         this.color = blockColor;
         this.position = new Point (AppModel.FieldConstants.COLUMN_COUNT.getalue()/2,0);
     }
-
+    // Случайным оразом выбирает индекс для формыы тетрамино
     public static Block createBlock(){
         Random random = new Random();
         int shapeIndex = random.nextInt(Shape.values().length);
@@ -41,4 +41,14 @@ public class Block {
         private final int rgbValue;
         private final int byteValue;
     }
+
+    public static int getColor(byte value) {
+        for (BlockColor colour : BlockColor.values()) {
+            if (value == colour.bytealue){
+                return  colour.rgbValue;
+            }
+        }
+        return -1;
+    }
+
 }
