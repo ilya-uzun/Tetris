@@ -19,12 +19,14 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        val linearLayout: LinearLayout = LinearLayout(this)
         supportActionBar?.hide() // если ссылка не является пустой то объект вызывает метод hide
+
+        //val linearLayout: LinearLayout = LinearLayout(this)()
         val btnNewGame = findViewById<Button>(R.id.btn_new_game)
         val btnResetScore = findViewById<Button>(R.id.btn_reset_score)
         val btnExit = findViewById<Button>(R.id.btn_exit)
 
+        tvHighScore = findViewById<TextView>(R.id.tv_high_score)
         btnNewGame.setOnClickListener(this::onBtnNewGameClick)
         btnResetScore.setOnClickListener(this::onBtnResetScoreClick)
         btnExit.setOnClickListener(this::onBtnExitClick)
