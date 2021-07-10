@@ -29,7 +29,7 @@ public class Block {
         return  block;
     }
 
-    public emun BlockColor{
+    public enum BlockColor{
         PINK(Color.rgb(255,105,180), (byte) 2),
                 GREEN(Color.rgb(0,128,0), (byte) 3),
                 ORANGE(Color.rgb(255,140,0), (byte) 4),
