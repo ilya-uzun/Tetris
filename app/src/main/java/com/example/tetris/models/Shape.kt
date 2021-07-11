@@ -9,7 +9,7 @@ import java.lang.IllegalArgumentException
 enum class Shape(val frameCount: Int, val startPosition: Int) {
     // линия
     Tetromino(2,2){
-        override  fun getFlame(frameNumber: Int): Frama {
+        override  fun getFrame(frameNumber: Int): Frama {
             return when (frameNumber){
                 0 -> Frama(4).addRow("1111")
                 1 -> Frama(1)
@@ -23,7 +23,7 @@ enum class Shape(val frameCount: Int, val startPosition: Int) {
     },
     // квадрат
     Tetromino1(1,1){
-        override  fun getFlame(frameNumber: Int): Frama {
+        override  fun getFrame(frameNumber: Int): Frama {
             return Frama (2)
                     .addRow("11")
                     .addRow("11")
@@ -31,7 +31,7 @@ enum class Shape(val frameCount: Int, val startPosition: Int) {
     },
     // Z-Образная форма
     Tetromino2(2,1){
-        override  fun getFlame(frameNumber: Int): Frama {
+        override  fun getFrame(frameNumber: Int): Frama {
             return when (frameNumber){
                 0 -> Frama(3)
                     .addRow("110")
@@ -46,7 +46,7 @@ enum class Shape(val frameCount: Int, val startPosition: Int) {
     },
     // S-Образная форма
     Tetromino3(2,1){
-        override  fun getFlame(frameNumber: Int): Frama {
+        override  fun getFrame(frameNumber: Int): Frama {
             return when (frameNumber){
                 0 -> Frama(3)
                     .addRow("011")
@@ -61,7 +61,7 @@ enum class Shape(val frameCount: Int, val startPosition: Int) {
     },
     // линия
     Tetromino4(2,2){
-        override  fun getFlame(frameNumber: Int): Frama {
+        override  fun getFrame(frameNumber: Int): Frama {
             return when (frameNumber){
                 0 -> Frama(4).addRow("1111")
                 1 -> Frama(1)
@@ -75,7 +75,7 @@ enum class Shape(val frameCount: Int, val startPosition: Int) {
     },
     // T-Образная форма
     Tetromino5(4,1){
-        override  fun getFlame(frameNumber: Int): Frama {
+        override  fun getFrame(frameNumber: Int): Frama {
             return when (frameNumber){
                 0 -> Frama(3)
                     .addRow("010")
@@ -97,7 +97,7 @@ enum class Shape(val frameCount: Int, val startPosition: Int) {
     },
     // J-Образная форма
     Tetromino6(4,1){
-        override  fun getFlame(frameNumber: Int): Frama {
+        override  fun getFrame(frameNumber: Int): Frama {
             return when (frameNumber){
                 0 -> Frama(3)
                     .addRow("100")
@@ -119,7 +119,7 @@ enum class Shape(val frameCount: Int, val startPosition: Int) {
     },
     // L-Образная форма
     Tetromino7(4,1){
-        override  fun getFlame(frameNumber: Int): Frama {
+        override  fun getFrame(frameNumber: Int): Frama {
             return when (frameNumber){
                 0 -> Frama(3)
                     .addRow("001")
@@ -139,5 +139,5 @@ enum class Shape(val frameCount: Int, val startPosition: Int) {
             }
         }
     };
-    abstract fun getFlame(flameNumber: Int): Frama
+    abstract fun getFrame(flameNumber: Int): Frama
 }
