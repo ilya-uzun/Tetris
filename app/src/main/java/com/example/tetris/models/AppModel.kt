@@ -19,7 +19,7 @@ class AppModel {
     private var preferences: AppPreferences? = null // Обеспечивает доступ у файлу SheredPreference
     
     var currentBlock: Block? = null // Доспуп к свойству текущего блока трянслятора
-    val currentState: String = Statuses.AWAITING_START.name // .name - получить string название переменной
+    var currentState: String = Statuses.AWAITING_START.name // .name - получить string название переменной
     // игровое поля, двухмерный массив
     private var field: Array<ByteArray> = array2dOfByte(
         FieldConstants.COLUMN_COUNT.value,
@@ -123,7 +123,7 @@ class AppModel {
                     persistCellData()
                     assessField()
                     generateNextBlock()
-                    if (!blockAdditionossible()) {
+                    if (!blockAdditionPossible()) {
                         currentState = Statuses.OVER.name;
                         currentBlock = null;
                         resetField(false);
@@ -131,7 +131,7 @@ class AppModel {
                 }
             }else {
                 if (frameNumber != null) {
-                    transitionBlock(cooridnate, frameNumber)
+                    translateBlock(cooridnate, frameNumber)
                     currentBlock?.setState(frameNumber, cooridnate)
                 }
             }
@@ -170,7 +170,7 @@ class AppModel {
         }
     }
 
-    private fun transitionBlock(position: Point, frameNumber: Int){
+    private fun translateBlock(position: Point, frameNumber: Int){
         synchronized(field){
             val shape: Array<ByteArray>? = currentBlock?.getShape(frameNumber)
             if (shape != null) {
@@ -187,7 +187,7 @@ class AppModel {
         }
     }
 
-    private fun blockAdditionossiblePossible(): Boolean {
+    private fun blockAdditionPossible(): Boolean {
         if (!moveValid(currentBlock?.position as Point, currentBlock?.framaNumber)){
             return  false
         }
