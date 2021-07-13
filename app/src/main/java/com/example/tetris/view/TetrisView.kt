@@ -22,7 +22,7 @@ import com.example.tetris.constants.Statuses
 import com.example.tetris.models.Block
 import com.example.tetris.models.AppModel
 
-class TetrisView : View {
+ class TetrisView : View {
     private val paint = Paint()
     private var lastMove: Long = 0
     private var model: AppModel? = null
@@ -32,7 +32,6 @@ class TetrisView : View {
     private var frameOffset: Dimension = Dimension(0, 0)
 
     constructor(context: Context, attrs: AttributeSet)   : super(context, attrs)
-
     constructor(context: Context, attrs: AttributeSet, defStyle: Int)   : super(context, attrs, defStyle)
 
     companion object{
@@ -66,14 +65,11 @@ class TetrisView : View {
             sendMessageDelayed(obtainMessage(0),delay)
         }
     }
-/*
-Включение свойст ширины и высоты
-*/
-    private data class Dimension(val width: Int, val height: Int)
+
 
                                          /* Сетторы*/
     //Установка текущей модели
-    fun  setModel(model: AppModel){
+     fun  setModel(model: AppModel){
         this.model = model
     }
     //установка приениемого действия

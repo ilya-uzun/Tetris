@@ -28,7 +28,7 @@
             android:layout_height="wrap_content"
             android:text="@string/high_score_default"
             android:textSize="20sp"
-            android:layout_marginTop="@+id/layout_margin_top"/>
+            android:layout_marginTop="@dimen/layout_margin_top"/>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
