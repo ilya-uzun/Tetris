@@ -1,3 +1,7 @@
+/*
+Класс для взаимодействия пользователя с AppModel
+ */
+
 package com.example.tetris.view
 
 import android.content.Context
@@ -24,9 +28,9 @@ class TetrisView : View {
     private var cellSize: Dimension = Dimension =(0, 0)
     private var frameOffset: Dimension = Dimension =(0, 0)
 
-    constructor(context: Context, attrs: ArrtibuteSet)   : super(context, arrrs)
+    constructor(context: Context, attrs: ArrtibuteSet)   : super(context, attrs)
 
-    constructor(context: Context, attrs: ArrtibuteSet, defStyle: Int)   : super(context, arrrs, defStyle)
+    constructor(context: Context, attrs: ArrtibuteSet, defStyle: Int)   : super(context, attrs, defStyle)
 
     companion object{
         private val DELAY = 500
