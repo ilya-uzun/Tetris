@@ -28,12 +28,12 @@ class TetrisView : View {
     private var model: AppModel? = null
     private var activity: GameActivity? = null
     private val viewHandler = ViewHandler(this)
-    private var cellSize: Dimension = Dimension =(0, 0)
-    private var frameOffset: Dimension = Dimension =(0, 0)
+    private var cellSize: Dimension = Dimension(0, 0)
+    private var frameOffset: Dimension = Dimension(0, 0)
 
-    constructor(context: Context, attrs: ArrtibuteSet)   : super(context, attrs)
+    constructor(context: Context, attrs: AttributeSet)   : super(context, attrs)
 
-    constructor(context: Context, attrs: ArrtibuteSet, defStyle: Int)   : super(context, attrs, defStyle)
+    constructor(context: Context, attrs: AttributeSet, defStyle: Int)   : super(context, attrs, defStyle)
 
     companion object{
         private val DELAY = 500
@@ -59,12 +59,11 @@ class TetrisView : View {
                     }
                 }
             }
+        }
         //Удаление отпрвлного сообщения и отправление ноого сообщения с задержкой
-          fun sleep(delay:Long){
-                this.removeMessages(0)
-                sendMessageDelayed(obtainMessage(0),delay)
-            }
-
+        fun sleep(delay:Long){
+            this.removeMessages(0)
+            sendMessageDelayed(obtainMessage(0),delay)
         }
     }
 /*
