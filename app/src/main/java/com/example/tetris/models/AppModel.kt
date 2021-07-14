@@ -29,7 +29,7 @@ class AppModel {
     fun setPreferences(preferences: AppPreferences?){
        this.preferences = preferences
     }
-    //возвращает состтояние ячейки
+    //возвращает состояние ячейки
     fun getCellStatus(row: Int, column: Int): Byte?{
         return field[row][column]
     }
@@ -75,7 +75,8 @@ class AppModel {
                     for (j in 0 until shape[i].size) {
                         val y = position.y + i
                         val x = position.x + j
-                        if (CellConstants.EMPTY.value != shape[i][j] && CellConstants.EMPTY.value != field[y][x]){
+                        if (CellConstants.EMPTY.value != shape[i][j] &&
+                            CellConstants.EMPTY.value != field[y][x]){
                             return false
                         }
                     }

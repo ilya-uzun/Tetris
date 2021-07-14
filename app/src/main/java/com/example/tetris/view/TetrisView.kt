@@ -38,6 +38,7 @@ import com.example.tetris.models.AppModel
         private val DELAY = 500
         private val BLOCK_OFFSET = 2
         private val FRAME_OFFSET_BASE = 10
+
     }
                                      /* Частные классы */
 /*
@@ -45,7 +46,7 @@ import com.example.tetris.models.AppModel
 */
 
     private class ViewHandler(private val owner: TetrisView): Handler (){
-    //Проерка отправки сообщения
+    //Проверка отправки сообщения
         override fun handleMessage(message: Message){
             if(message.what == 0){
                 if(owner.model != null){
@@ -123,19 +124,19 @@ import com.example.tetris.models.AppModel
             height - frameOffset.height.toFloat(), paint)
     }
 
-    private fun drawCell(canvas: Canvas, row: Int, col: Int){
-        val cellStatus = model?.getCellStatus(row, col)
-        if(CellConstants.EMPTY.value != cellStatus){
-            val color = if (CellConstants.EPHEMERAL.value == cellStatus){
-                model?.currentBlock?.color
-            } else {
-                Block.getColor(cellStatus as Byte)
-            }
-            drawCell(canvas, col, row, color as Int)
-        }
-    }
+     private fun drawCell(canvas: Canvas, row: Int, col: Int){
+         val cellStatus = model?.getCellStatus(row, col)
+         if(CellConstants.EMPTY.value != cellStatus){
+             val color = if (CellConstants.EPHEMERAL.value == cellStatus){
+                 model?.currentBlock?.color
+             } else {
+                 Block.getColor(cellStatus as Byte)
+             }
+             drawCell(canvas, col, row, color as Int)
+         }
+     }
 
-    private fun drawCell(canvas: Canvas, row: Int, col: Int, rgbColor: Int){
+     private fun drawCell(canvas: Canvas, x: Int, y: Int, rgbColor: Int){
         paint.color = rgbColor
         val top: Float = (frameOffset.height + y * cellSize.height + BLOCK_OFFSET).toFloat()
         val left: Float = (frameOffset.width + x * cellSize.width + BLOCK_OFFSET).toFloat()

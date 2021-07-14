@@ -28,6 +28,7 @@ class GameActivity: AppCompatActivity() {
         val btnRestart = findViewById<Button>(R.id.btn_restart)
         tvHighScore = findViewById<TextView>(R.id.tv_high_score)
         tvCurrentScore = findViewById<TextView>(R.id.tv_current_score)
+        tetrisView = findViewById<TetrisView>(R.id.view_tetris)
         tetrisView.setActivity(this)
         tetrisView.setModel(appModel)
         tetrisView.setOnTouchListener(this::onTetrisViewTouch)
