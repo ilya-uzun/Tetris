@@ -22,8 +22,8 @@ class AppModel {
     var currentState: String = Statuses.AWAITING_START.name // .name - получить string название переменной
     // игровое поля, двухмерный массив
     private var field: Array<ByteArray> = array2dOfByte(
-        FieldConstants.COLUMN_COUNT.value,
-        FieldConstants.ROW_COUNT.value
+        FieldConstants.ROW_COUNT.value,
+        FieldConstants.COLUMN_COUNT.value
     )
     // Устанавливает свойства предпочтения для AppModel
     fun setPreferences(preferences: AppPreferences?){
@@ -57,7 +57,7 @@ class AppModel {
         score += 1
         if (score > preferences?.getHighScore() as Int) preferences?.saveHighScore(score) // Переписать значение если больше рекорда
     }
-    // Создаем новый блок и установливаем значение curenrBlock. Если заполнены все ячейки очистить строку
+    // Создаем новый блок и установливаем значение createBlock. Если заполнены все ячейки очистить строку
     private fun generateNextBlock(){
         currentBlock = Block.createBlock()
     }
@@ -94,19 +94,19 @@ class AppModel {
         if (isGameActive()) {
             resetField()
             var frameNumber: Int? = currentBlock?.framaNumber
-            val cooridnate: Point? = Point()
-            cooridnate?.x = currentBlock?.position?.x
-            cooridnate?.y = currentBlock?.position?.y
+            val cooridinate: Point? = Point()
+            cooridinate?.x = currentBlock?.position?.x
+            cooridinate?.y = currentBlock?.position?.y
 
             when (action) {
                 Motions.LEFT.name -> {
-                    cooridnate?.x = currentBlock?.position?.x?.minus(1)
+                    cooridinate?.x = currentBlock?.position?.x?.minus(1)
                 }
                 Motions.RIGHT.name -> {
-                    cooridnate?.x = currentBlock?.position?.x?.plus(1)
+                    cooridinate?.x = currentBlock?.position?.x?.plus(1)
                 }
                 Motions.DOWN.name -> {
-                    cooridnate?.y = currentBlock?.position?.y?.plus(1)
+                    cooridinate?.y = currentBlock?.position?.y?.plus(1)
                 }
                 Motions.ROTATE.name -> {
                     frameNumber = frameNumber?.plus(1)
@@ -117,7 +117,7 @@ class AppModel {
                     }
                 }
             }
-            if (!moveValid(cooridnate as Point, frameNumber)) {
+            if (!moveValid(cooridinate as Point, frameNumber)) {
                 translateBlock(currentBlock?.position as Point, currentBlock?.framaNumber as Int)
                 if (Motions.DOWN.name == action) {
                     boostScore()
@@ -132,8 +132,8 @@ class AppModel {
                 }
             }else {
                 if (frameNumber != null) {
-                    translateBlock(cooridnate, frameNumber)
-                    currentBlock?.setState(frameNumber, cooridnate)
+                    translateBlock(cooridinate, frameNumber)
+                    currentBlock?.setState(frameNumber, cooridinate)
                 }
             }
         }
@@ -177,10 +177,10 @@ class AppModel {
             if (shape != null) {
                 for (i in shape.indices){
                     for (j in 0 until shape[i].size){
-                        val y = position.y + 1
-                        val x = position.x + 1
+                        val y = position.y + i
+                        val x = position.x + j
                         if (CellConstants.EMPTY.value != shape[i][j]){
-                            field[x][y] = shape[i][j]
+                            field[y][x] = shape[i][j]
                         }
                     }
                 }

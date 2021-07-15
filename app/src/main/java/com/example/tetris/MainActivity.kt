@@ -20,8 +20,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         supportActionBar?.hide() // если ссылка не является пустой то объект вызывает метод hide
-
-        //val linearLayout: LinearLayout = LinearLayout(this)()
+        
         val btnNewGame = findViewById<Button>(R.id.btn_new_game)
         val btnResetScore = findViewById<Button>(R.id.btn_reset_score)
         val btnExit = findViewById<Button>(R.id.btn_exit)

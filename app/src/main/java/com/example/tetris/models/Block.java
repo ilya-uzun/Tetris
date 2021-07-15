@@ -20,11 +20,11 @@ public class Block {
         this.color = blockColor;
         this.position = new Point(FieldConstants.COLUMN_COUNT.getValue()/2,0);
     }
-    // Случайным оразом выбирает индекс для формыы тетрамино
+    // Случайным образом выбирает индекс для формыы тетрамино
     public static Block createBlock(){
         Random random = new Random();
         int shapeIndex = random.nextInt(Shape.values().length);
-        BlockColor blockColor = BlockColor.values()[random.nextInt(Shape.values().length)];
+        BlockColor blockColor = BlockColor.values()[random.nextInt(BlockColor.values().length)];
 
         Block block = new Block(shapeIndex, blockColor);
         block.position.x = block.position.x - Shape.values()[shapeIndex].getStartPosition();
