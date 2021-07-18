@@ -1,5 +1,5 @@
 /*
-Логика игрово поля
+Логика игрового поля
  */
 
 package com.example.tetris.models
@@ -15,7 +15,7 @@ import com.example.tetris.storage.AppPreferences
 import java.text.FieldPosition
 
 class AppModel {
-    var score: Int = 0 // Сохраеие счета
+    var score: Int = 0 // Сохраение счета
     private var preferences: AppPreferences? = null // Обеспечивает доступ у файлу SheredPreference
     
     var currentBlock: Block? = null // Доспуп к свойству текущего блока трянслятора
